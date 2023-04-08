@@ -6,4 +6,4 @@
 void hjs_init(){
     std::cout << "Initialisation de HJS..."
 }
-#endif //HJS_HJS_H
+#endif HJS_HJS_H
