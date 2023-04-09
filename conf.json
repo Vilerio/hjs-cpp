@@ -1,3 +1,4 @@
 {
-  "already_configured": "false"
+  "already_configured": "false",
+  "storage_directory" : "none"
 }
