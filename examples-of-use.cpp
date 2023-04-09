@@ -3,5 +3,6 @@
 
 int main()
 {
-    hjs_init("/home/a");
+    hjs_init("/home/hjs/storage");
+    hjs_get_index();
 }

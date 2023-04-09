@@ -5,6 +5,7 @@
 #include <string>
 #include "json.hpp"
 #include <fstream>
+#include "hjs-index.hpp"
 
 using json = nlohmann::json;
 
@@ -45,5 +46,6 @@ void hjs_init(std::string directory){
         std::cout << "HJS is now configured." << std::endl;
     }
 }
+
 
 #endif // HJS_HJS_H

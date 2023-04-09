@@ -1,4 +1,1 @@
-{
-  "already_configured": false,
-  "storage_directory" : "none"
-}
+{"already_configured":true,"storage_directory":{"path":"/home/a"}}
