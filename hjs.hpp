@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 #include "json.hpp"
+#include <fstream>
+
+using json = nlohmann::json;
 
 bool already_init{
     // Open conf.json
