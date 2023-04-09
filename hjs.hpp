@@ -7,7 +7,7 @@ bool already_init{
     return false;
 };
 
-void hjs_init(){
+void hjs_init(std::string directory){
     if (already_init){
         std::cout << "HJS is already configured." << std::endl;
     }
