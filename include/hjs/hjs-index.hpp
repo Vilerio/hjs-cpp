@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "json.hpp"
+#include "../json.hpp"
 #include <fstream>
 
 std::string hjs_get_index(){
