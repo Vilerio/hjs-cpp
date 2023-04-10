@@ -13,7 +13,7 @@ std::string hjs_get_index(){
     json_mainconf_file >> json_mainconf_file_values;
     json_mainconf_file.close();
 
-    std::string index_file = json_mainconf_file_values["storage_directory"].get<std::string>() + "/index.json";
+    std::string index_file = (json_mainconf_file_values["storage_directory"].dump()).substr(1, json_mainconf_file_values["storage_directory"].dump().length() - 2) + "/index.json";
 
     // Open index.json
     std::ifstream json_index_file(index_file);

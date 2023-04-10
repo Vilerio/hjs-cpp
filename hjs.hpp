@@ -32,11 +32,8 @@ void hjs_init(std::string directory){
         json_mainconf_file >> json_mainconf_file_values;
         json_mainconf_file.close();
 
-        nlohmann::json actual_storage_directory;
-        actual_storage_directory["path"] = directory;
-
         json_mainconf_file_values["already_configured"] = true;
-        json_mainconf_file_values["storage_directory"] = actual_storage_directory;
+        json_mainconf_file_values["storage_directory"] = directory;
 
         // Open conf.json in writing mode
         std::ofstream json_mainconf_file_write("conf.json");
