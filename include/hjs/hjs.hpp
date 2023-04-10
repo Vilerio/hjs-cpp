@@ -70,4 +70,33 @@ void hjs_create_index(){
         std::cout << "The index already exists." << std::endl;
     }
 }
+
+void hjs_create_group(std::string group_name){
+    std::ifstream index_file(storage_directory() + "/index.json");
+    json index_values;
+    index_file >> index_values;
+    index_file.close();
+
+    if (!index_values["actual_index"].get<bool>()) {
+        std::cout << "Error: index is not initialized." << std::endl;
+        return;
+    }
+
+    if (index_values.find(group_name) != index_values.end()) {
+        std::cout << "Error: group already exists." << std::endl;
+        return;
+    }
+
+    json new_group;
+    new_group["data"] = json::array();
+
+    index_values[group_name] = new_group;
+
+    std::ofstream index_file_write(storage_directory() + "/index.json");
+    index_file_write << index_values.dump(4);
+    index_file_write.close();
+
+    std::cout << "Group \"" << group_name << "\" created successfully." << std::endl;
+}
+
 #endif // HJS_HJS_H
