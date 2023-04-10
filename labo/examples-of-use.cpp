@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/hjs/hjs.hpp"
+#include "../include/hjs/hjs.hpp"
 
 int main()
 {
