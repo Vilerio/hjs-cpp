@@ -140,6 +140,29 @@ std::vector<std::string> hjs_list_groups() {
     return groups;
 }
 
+std::vector<std::string> hjs_list_elements(std::string group_name){
+    std::ifstream index_file(hjs_storage_directory() + "/index.json");
+    json index_values;
+    index_file >> index_values;
+    index_file.close();
+
+    if (!index_values["actual_index"].get<bool>()) {
+        std::cout << "Error : index is not initialized." << std::endl;
+        return {};
+    }
+
+    if (index_values.find(group_name) == index_values.end()) {
+        std::cout << "Error : group does not exist." << std::endl;
+        return {};
+    }
+
+    std::vector<std::string> elements;
+    for (auto& element : index_values[group_name].items()) {
+        elements.push_back(element.key());
+    }
+
+    return elements;
+}
 
 void hjs_delete_group(std::string group_name){
     std::ifstream index_file(hjs_storage_directory() + "/index.json");
@@ -165,6 +188,37 @@ void hjs_delete_group(std::string group_name){
 
     std::cout << "Group \"" << group_name << "\" deleted successfully." << std::endl;
 }
+
+void hjs_delete_element(std::string group_name, std::string element_name){
+    std::ifstream index_file(hjs_storage_directory() + "/index.json");
+    json index_values;
+    index_file >> index_values;
+    index_file.close();
+
+    if (!index_values["actual_index"].get<bool>()) {
+        std::cout << "Error : index is not initialized." << std::endl;
+        return;
+    }
+
+    if (index_values.find(group_name) == index_values.end()) {
+        std::cout << "Error : group does not exist." << std::endl;
+        return;
+    }
+
+    if (index_values[group_name].find(element_name) == index_values[group_name].end()) {
+        std::cout << "Error : element does not exist." << std::endl;
+        return;
+    }
+
+    index_values[group_name].erase(element_name);
+
+    std::ofstream index_file_write(hjs_storage_directory() + "/index.json");
+    index_file_write << index_values.dump(4);
+    index_file_write.close();
+
+    std::cout << "Element \"" << element_name << "\" deleted successfully." << std::endl;
+}
+
 
 void hjs_create_element(std::string group_name, std::string element_name, json element_value, std::string element_type){
     std::ifstream index_file(hjs_storage_directory() + "/index.json");
