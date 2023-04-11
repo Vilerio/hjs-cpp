@@ -43,4 +43,4 @@ To get the value of an element, use the "hjs_get_element_value" function : <br/>
 ```hjs_get_<type of the element>_element("group_name", "element_name")``` <br/> <br/>
 
 ## HJS Credits
-HJS is a project using, among others, the [nlohmann's json library](https://github.com/nlohmann/json).<br/> <br/>
+HJS is a project using the [nlohmann's json library](https://github.com/nlohmann/json).<br/> <br/>
