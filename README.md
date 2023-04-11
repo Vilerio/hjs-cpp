@@ -41,3 +41,6 @@ To get the type of an element, use the "hjs_get_element_type" function : <br/> <
 This function will return a string containing the type of the element. <br/> <br/>
 To get the value of an element, use the "hjs_get_element_value" function : <br/> <br/>
 ```hjs_get_<type of the element>_element("group_name", "element_name")``` <br/> <br/>
+
+## HJS Credits
+HJS is a project using, among others, the [nlohmann's json library](https://github.com/nlohmann/json).<br/> <br/>
