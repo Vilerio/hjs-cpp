@@ -8,7 +8,7 @@
 
 std::string hjs_get_index(){
     // Open conf.json
-    std::ifstream json_mainconf_file("conf.json");
+    std::ifstream json_mainconf_file("/Users/olivier/Documents/Dev/C++/hjs/labo/conf.json");
     nlohmann::json json_mainconf_file_values;
     json_mainconf_file >> json_mainconf_file_values;
     json_mainconf_file.close();

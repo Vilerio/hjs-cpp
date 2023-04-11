@@ -12,7 +12,7 @@ using json = nlohmann::json;
 
 std::string storage_directory(){
     // Open conf.json
-    std::ifstream json_mainconf_file("conf.json");
+    std::ifstream json_mainconf_file("/Users/olivier/Documents/Dev/C++/hjs/labo/conf.json");
     nlohmann::json json_mainconf_file_values;
     json_mainconf_file >> json_mainconf_file_values;
     json_mainconf_file.close();
@@ -23,7 +23,7 @@ std::string storage_directory(){
 
 bool already_init(){
     // Open conf.json
-    std::ifstream json_mainconf_file("conf.json");
+    std::ifstream json_mainconf_file("/Users/olivier/Documents/Dev/C++/hjs/labo/conf.json");
     nlohmann::json json_mainconf_file_values;
     json_mainconf_file >> json_mainconf_file_values;
     json_mainconf_file.close();
@@ -39,7 +39,8 @@ void hjs_init(std::string directory){
     }
     else{
         // Open conf.json
-        std::ifstream json_mainconf_file("conf.json");
+        //std::ifstream json_mainconf_file("../conf.json");
+        std::ifstream json_mainconf_file("/Users/olivier/Documents/Dev/C++/hjs/labo/conf.json");
         nlohmann::json json_mainconf_file_values;
         json_mainconf_file >> json_mainconf_file_values;
         json_mainconf_file.close();
@@ -48,7 +49,7 @@ void hjs_init(std::string directory){
         json_mainconf_file_values["storage_directory"] = directory;
 
         // Open conf.json in writing mode
-        std::ofstream json_mainconf_file_write("conf.json");
+        std::ofstream json_mainconf_file_write("/Users/olivier/Documents/Dev/C++/hjs/labo/conf.json");
         json_mainconf_file_write << json_mainconf_file_values;
         json_mainconf_file_write.close();
 
