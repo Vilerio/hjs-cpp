@@ -1,6 +1,6 @@
-# hjs
+# HJS
 A header library for storing and accessing hierarchical data for C++11, which uses the JSON structure. (Hierarchical JSON storage for C++).
-
+<br/> <br/>
 # HJS documentation
 ## Installation
 Installing hjs is very simple, you just have to put the files available in the "include" folder of the repo in the same directory as your main c++ 11 file (often main.cpp). Once this is done, you have to include the header with these lines : <br/> <br/>
