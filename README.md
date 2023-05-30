@@ -7,7 +7,7 @@ Installing hjs is very simple, you just have to put the files available in the "
 ```cpp
 #include "hjs.hpp"
 ``` 
-<br/>
+
 ```cpp
 #include "json.hpp
 ``` 
@@ -21,7 +21,7 @@ To initialize HJS correctly, you must use the "hjs_init" function and then the "
 ```cpp
 hjs_init("absolute_directory_of_where_you_want_to_store_data")
 ``` 
-<br/>
+
 ```cpp
 hjs_create_index()
 ``` 
